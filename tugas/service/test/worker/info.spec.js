@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const { connect } = require('../../lib/orm');
 const { workerSchema } = require('../../worker/worker.model');
-const { config } = require('../../config');
+const { config } = require('../../config.pg');
 const server = require('../../worker/server');
 const fetch = require('node-fetch');
 const { truncate } = require('../../worker/worker');
