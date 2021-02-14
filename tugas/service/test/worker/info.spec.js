@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const { connect } = require('../../lib/orm');
 const { workerSchema } = require('../../worker/worker.model');
-const { config } = require('../../config.pg');
+const { config } = require('../../config');
 const server = require('../../worker/server');
 const fetch = require('node-fetch');
 const { truncate } = require('../../worker/worker');
@@ -10,7 +10,7 @@ const nock = require('nock');
 describe('workers info', () => {
   let connection;
   beforeAll(async () => {
-    connection = await connect([workerSchema], config.database);
+    connection = await connect([workerSchema], config.pg);
     server.run();
   });
   // beforeEach(async () => {
